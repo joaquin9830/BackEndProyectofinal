@@ -1,9 +1,9 @@
 
-package com.portfoliovi.mgb.servicio;
+package com.portfoliovi.mgb.Service;
 
-import com.portfoliovi.mgb.entidad.Persona;
-import com.portfoliovi.mgb.interfaz.IPersonaService;
-import com.portfoliovi.mgb.repositorio.IPersonaRepository;
+import com.portfoliovi.mgb.entity.Persona;
+import com.portfoliovi.mgb.Interface.IPersonaService;
+import com.portfoliovi.mgb.Repository.IPersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

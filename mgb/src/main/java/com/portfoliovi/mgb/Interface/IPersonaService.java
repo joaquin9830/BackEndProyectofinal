@@ -1,7 +1,7 @@
 
-package com.portfoliovi.mgb.interfaz;
+package com.portfoliovi.mgb.Interface;
 
-import com.portfoliovi.mgb.entidad.Persona;
+import com.portfoliovi.mgb.entity.Persona;
 import java.util.List;
 
 

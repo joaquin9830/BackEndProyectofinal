@@ -1,8 +1,8 @@
 
-package com.portfoliovi.mgb.controlador;
+package com.portfoliovi.mgb.Controller;
 
-import com.portfoliovi.mgb.entidad.Persona;
-import com.portfoliovi.mgb.interfaz.IPersonaService;
+import com.portfoliovi.mgb.entity.Persona;
+import com.portfoliovi.mgb.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,21 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PersonaController {
-    @Autowired IPersonaService ipersonaservice;
+    @Autowired IPersonaService ipersonaService;
     
-    @GetMapping("personas/traer")
+    @GetMapping("/personas/traer")
     public List<Persona> getPersona(){
-        return ipersonaservice.getPersona();
+        return ipersonaService.getPersona();
     }
     
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
-        ipersonaservice.savePersona(persona);
+        ipersonaService.savePersona(persona);
         return "La persona fue creada correctamente";
     }
     @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
-        ipersonaservice.deletePersona(id);
+        ipersonaService.deletePersona(id);
         return "La persona fue elminada correctamente";
     }
     @PutMapping("/personas/editar/{id}")
@@ -38,11 +38,11 @@ public class PersonaController {
                                @RequestParam("nombre")String nuevoNombre,
                                @RequestParam("apellido")String nuevoApellido,
                                @RequestParam("img")String nuevoimg){
-        Persona persona = ipersonaservice.findPersona(id);
+        Persona persona = ipersonaService.findPersona(id);
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
         persona.setImg(nuevoimg);
-        ipersonaservice.savePersona(persona);
+        ipersonaService.savePersona(persona);
         return persona;
     }
     
