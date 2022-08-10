@@ -6,7 +6,7 @@ package com.portfoliovi.mgb.Controller;
 
 import com.portfoliovi.mgb.Dto.dtoEducacion;
 import com.portfoliovi.mgb.Security.Controller.Mensaje;
-import com.portfoliovi.mgb.Service.SEducacion;
+import com.portfoliovi.mgb.Service.Seducacion;
 import com.portfoliovi.mgb.entity.Educacion;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CEducacion {
     @Autowired
-    SEducacion sEducacion;
+    Seducacion sEducacion;
     
     @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
